@@ -191,8 +191,12 @@ create_project() {
     # Create project structure
     mkdir -p "$full_path"/{main,components,tools,docs,tests}
     
-    # Copy CMakeLists.txt template
-    cp "$full_path/CMakeLists.txt" "$full_path/"
+    # Create project CMakeLists.txt
+    cat > "$full_path/CMakeLists.txt" << EOF
+cmake_minimum_required(VERSION 3.16)
+include(\$ENV{IDF_PATH}/tools/cmake/project.cmake)
+project($project_name)
+EOF
     
     # Create basic main.c
     cat > "$full_path/main/main.c" << EOF
@@ -262,8 +266,23 @@ Project description here.
 \`\`\`
 EOF
     
+    # Create project.json metadata
+    cat > "$full_path/project.json" << EOF
+{
+  "name": "$project_name",
+  "description": "ESP32 project created from template",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": ["Basic ESP32", "FreeRTOS"]
+}
+EOF
+    
     print_status "Project created successfully!"
-    print_status "Add to registry by editing PROJECTS array in build.sh"
+    print_status "Project is automatically discoverable via './build.sh list'"
 }
 
 # Helper function to detect and build UI if present
