@@ -4,18 +4,18 @@ A comprehensive ESP32 camera development environment combining ESP-IDF v5.5-dev 
 
 ## Features
 
-- **Advanced Camera Support**: Built-in support for DVP and CSI cameras with ESP32-S3 and ESP32-P4
+- **Advanced Camera Support**: Built-in support for camera modules with ESP32-S3
 - **Computer Vision**: Face detection, face recognition, pedestrian detection, and QR code recognition
 - **AI Integration**: Asynchronous camera/AI processing for higher FPS performance
 - **Modern UI**: LVGL graphics library support for rich user interfaces
 - **Automated Build System**: Central project registry with automated discovery and management
-- **Multi-Target Support**: Supports ESP32-S3-EYE and ESP32-P4-Function-EV-Board
+- **Multi-Target Support**: Supports ESP32S3 XIAO Sense development board
 
 ## Quick Start
 
 ### Prerequisites
 
-- **Hardware**: ESP32-S3-EYE or ESP32-P4-Function-EV-Board development kit
+- **Hardware**: ESP32S3 XIAO Sense development kit
 - **Software**: Linux/macOS/Windows with Python 3.8+, Git, CMake (optional)
 
 ### Setup
@@ -60,7 +60,7 @@ git submodule update --remote            # Update all
 
 Use `./build.sh list` to see all discovered projects. Each project includes:
 
-- **Target chip** (esp32s3, esp32p4)
+- **Target chip** (esp32s3)
 - **Description** and key features
 - **Automated build commands**
 
@@ -142,8 +142,7 @@ projects/
 
 | SoC | Development Board | Features |
 |-----|------------------|----------|
-| ESP32-S3 | ESP-S3-EYE | Camera, LCD, buttons, microphone |
-| ESP32-P4 | ESP32-P4-Function-EV-Board | High-performance AI, camera, touch display |
+| ESP32-S3 | ESP32S3 XIAO Sense | OV2640/OV5640 camera, digital microphone, 8MB PSRAM, SD card slot |
 
 ### Example Applications
 
@@ -166,7 +165,7 @@ projects/
 ### Version Information
 
 - **ESP-IDF**: v5.5-dev (latest development branch)
-- **Target Support**: ESP32, ESP32-S2, ESP32-C3, ESP32-S3, ESP32-C6, ESP32-H2, ESP32-P4, ESP32-C5, ESP32-C61
+- **Target Support**: ESP32, ESP32-S2, ESP32-C3, ESP32-S3, ESP32-C6, ESP32-H2, ESP32-C5, ESP32-C61
 - **Key Components**:
   - Camera drivers (esp_driver_cam)
   - ISP (Image Signal Processor)
@@ -204,6 +203,7 @@ cd projects/my_camera_app
 ### 3. Develop Application
 
 Edit files in `main/` directory:
+
 - `main.c` - Main application logic
 - `CMakeLists.txt` - Build dependencies
 
@@ -303,8 +303,8 @@ idf.py monitor -p /dev/ttyUSB0 -b 921600
 
 - [ESP-IDF Programming Guide](https://docs.espressif.com/projects/esp-idf/)
 - [ESP-WHO Documentation](https://github.com/espressif/esp-who)
-- [ESP32-S3-EYE User Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32s3/esp32-s3-eye/)
-- [ESP32-P4 Function EV Board Guide](https://docs.espressif.com/projects/esp-dev-kits/en/latest/esp32p4/esp32-p4-function-ev-board/)
+- [ESP32S3 XIAO Sense Getting Started Guide](https://wiki.seeedstudio.com/xiao_esp32s3_getting_started/)
+- [ESP32S3 XIAO Sense Camera Usage Guide](https://wiki.seeedstudio.com/xiao_esp32s3_camera_usage/)
 - [LVGL Documentation](https://docs.lvgl.io/)
 
 ## License
