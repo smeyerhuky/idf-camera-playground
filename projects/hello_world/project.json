@@ -1,0 +1,11 @@
+{
+  "name": "hello_world",
+  "description": "Basic hello world application for ESP32-S3",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": ["Basic ESP32-S3", "Serial Output", "FreeRTOS"]
+}

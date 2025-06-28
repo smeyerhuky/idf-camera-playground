@@ -1,0 +1,418 @@
+# ESP-IDF Camera Development Framework - .gitignore
+
+# ==============================================================================
+# ESP-IDF Specific
+# ==============================================================================
+
+# ESP-IDF and ESP-WHO are managed as git submodules
+# Note: The directories themselves are tracked as submodules, not ignored
+
+# Build artifacts
+build/
+dist/
+*.o
+*.a
+*.elf
+*.bin
+*.map
+*.lst
+
+# ESP-IDF configuration and cache
+sdkconfig
+sdkconfig.old
+.config
+.config.old
+
+# Menuconfig backup files
+sdkconfig.backup.*
+
+# ESP-IDF Python virtual environment
+.espressif/
+
+# ESP-IDF component manager
+dependencies.lock
+managed_components/
+
+# ESP-IDF tools and cache
+.idf_tools/
+tools/esp32ulp-elf/
+tools/xtensa-esp32-elf/
+tools/xtensa-esp32s2-elf/
+tools/xtensa-esp32s3-elf/
+tools/riscv32-esp-elf/
+tools/esp32-camera/
+
+# Flash size detection cache
+.flash_size_cache
+
+# OpenOCD configuration
+openocd_logs/
+
+# ==============================================================================
+# Node.js / Yarn / NPM
+# ==============================================================================
+
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# nyc test coverage
+.nyc_output
+
+# Grunt intermediate storage
+.grunt
+
+# Bower dependency directory
+bower_components
+
+# node-waf configuration
+.lock-wscript
+
+# Compiled binary addons
+build/Release
+
+# Dependency directories
+jspm_packages/
+
+# TypeScript v1 declaration files
+typings/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# Yarn PnP files
+.pnp.*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# parcel-bundler cache
+.cache
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist/
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Webpack bundle analyzer
+webpack-bundle-analyzer-report.html
+
+# ==============================================================================
+# Development Tools
+# ==============================================================================
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# IntelliJ IDEA / CLion
+.idea/
+*.iws
+*.iml
+*.ipr
+cmake-build-*/
+
+# Eclipse CDT
+.cproject
+.project
+.settings/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# ==============================================================================
+# System Files
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ==============================================================================
+# Language Specific
+# ==============================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+pip-log.txt
+pip-delete-this-directory.txt
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+
+# C/C++
+*.d
+*.dSYM/
+*.la
+*.lai
+*.lib
+*.dll
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+core
+
+# ==============================================================================
+# Documentation
+# ==============================================================================
+
+# Generated documentation
+docs/_build/
+docs/build/
+site/
+_site/
+
+# Doxygen
+html/
+latex/
+
+# ==============================================================================
+# Logs and Databases
+# ==============================================================================
+
+# Log files
+*.log
+logs/
+log/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================================================================
+# Certificates and Keys
+# ==============================================================================
+
+# SSL certificates and private keys
+*.pem
+*.key
+*.crt
+*.cer
+*.p12
+*.pfx
+
+# SSH keys
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# ==============================================================================
+# Project Specific
+# ==============================================================================
+
+# Camera and media files (large binaries)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.bmp
+*.tiff
+*.mp4
+*.avi
+*.mov
+*.wav
+*.mp3
+
+# Temporary project files
+tmp/
+temp/
+.tmp/
+
+# Backup files
+*.bak
+*.backup
+*.old
+*~
+
+# Archive files
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# ==============================================================================
+# Environment Variables
+# ==============================================================================
+
+# Environment configuration
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==============================================================================
+# Testing
+# ==============================================================================
+
+# Test results
+test-results/
+test-output/
+coverage/
+.coverage
+junit.xml
+
+# ==============================================================================
+# Package Managers
+# ==============================================================================
+
+# Composer (PHP)
+/vendor/
+composer.lock
+
+# Cargo (Rust)
+target/
+Cargo.lock
+
+# Go
+vendor/
+*.test
+
+# ==============================================================================
+# Cloud and Deployment
+# ==============================================================================
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+
+# AWS
+.aws/
+
+# ==============================================================================
+# Custom Exceptions
+# ==============================================================================
+
+# Keep important configuration templates
+!sdkconfig.defaults
+!sdkconfig.defaults.*
+!partitions*.csv
+!components/**/component.mk
+!components/**/CMakeLists.txt
+
+# Keep example configurations
+!examples/**/sdkconfig.defaults
+!projects/**/sdkconfig.defaults
+
+# Keep documentation and README files
+!**/README.md
+!**/LICENSE
+!docs/**

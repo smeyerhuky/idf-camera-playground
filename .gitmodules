@@ -1,0 +1,6 @@
+[submodule "esp-idf"]
+	path = esp-idf
+	url = https://github.com/espressif/esp-idf.git
+[submodule "esp-who"]
+	path = esp-who
+	url = https://github.com/espressif/esp-who
