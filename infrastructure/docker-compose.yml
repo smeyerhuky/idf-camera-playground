@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  # MQTT Broker - Receives metrics from ESP32-S3 gateway
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: timelapse-mqtt
+    ports:
+      - "1883:1883"      # MQTT
+      - "9001:9001"      # WebSocket
+    volumes:
+      - ./mosquitto/mosquitto.conf:/mosquitto/config/mosquitto.conf
+      - mqtt_data:/mosquitto/data
+      - mqtt_logs:/mosquitto/log
+    restart: unless-stopped
+    networks:
+      - timelapse-net
+
+  # Time-series Database - Stores metrics
+  influxdb:
+    image: influxdb:2.7
+    container_name: timelapse-influx
+    ports:
+      - "8086:8086"
+    environment:
+      - DOCKER_INFLUXDB_INIT_MODE=setup
+      - DOCKER_INFLUXDB_INIT_USERNAME=admin
+      - DOCKER_INFLUXDB_INIT_PASSWORD=password123
+      - DOCKER_INFLUXDB_INIT_ORG=timelapse
+      - DOCKER_INFLUXDB_INIT_BUCKET=metrics
+    volumes:
+      - influx_data:/var/lib/influxdb2
+    restart: unless-stopped
+    networks:
+      - timelapse-net
+
+  # Visualization Dashboard
+  grafana:
+    image: grafana/grafana:latest
+    container_name: timelapse-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin123
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./grafana/datasources:/etc/grafana/provisioning/datasources
+    restart: unless-stopped
+    networks:
+      - timelapse-net
+    depends_on:
+      - influxdb
+
+  # MQTT to InfluxDB Bridge
+  telegraf:
+    image: telegraf:latest
+    container_name: timelapse-telegraf
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf:ro
+    restart: unless-stopped
+    networks:
+      - timelapse-net
+    depends_on:
+      - mosquitto
+      - influxdb
+
+  # Node-RED for automation and flows
+  node-red:
+    image: nodered/node-red:latest
+    container_name: timelapse-nodered
+    ports:
+      - "1880:1880"
+    volumes:
+      - node_red_data:/data
+    restart: unless-stopped
+    networks:
+      - timelapse-net
+    depends_on:
+      - mosquitto
+
+volumes:
+  mqtt_data:
+  mqtt_logs:
+  influx_data:
+  grafana_data:
+  node_red_data:
+
+networks:
+  timelapse-net:
+    driver: bridge

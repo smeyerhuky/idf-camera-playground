@@ -1,0 +1,139 @@
+menu "Time-V1 Configuration"
+
+    menu "Timelapse Settings"
+        config TIMELAPSE_INTERVAL_SEC
+            int "Capture interval (seconds)"
+            default 300
+            range 30 3600
+            help
+                Time between timelapse captures in seconds.
+                Lower values consume more power.
+
+        config VIDEO_DURATION_SEC
+            int "Video duration (seconds)"
+            default 5
+            range 1 30
+            help
+                Duration of each timelapse video recording.
+
+        config AUDIO_SAMPLE_RATE
+            int "Audio sample rate (Hz)"
+            default 16000
+            range 8000 48000
+            help
+                Sample rate for audio capture during video recording.
+    endmenu
+
+    menu "Power Management"
+        config POWER_BUDGET_MA
+            int "Power budget (mA)"
+            default 50
+            range 20 200
+            help
+                Average power consumption target for battery life optimization.
+
+        config DEEP_SLEEP_ENABLED
+            bool "Enable deep sleep between captures"
+            default y
+            help
+                Use deep sleep mode to minimize power consumption.
+
+        config WAKE_STUB_ENABLED
+            bool "Enable wake stub for faster startup"
+            default y
+            help
+                Use wake stub to reduce boot time from deep sleep.
+    endmenu
+
+    menu "WiFi Configuration"
+        config WIFI_SSID
+            string "WiFi SSID"
+            default "pianomaster"
+            help
+                WiFi network name for NTP sync and initial setup.
+
+        config WIFI_PASSWORD
+            string "WiFi Password"
+            default "happyness"
+            help
+                WiFi network password.
+
+        config NTP_SERVER
+            string "NTP Server"
+            default "pool.ntp.org"
+            help
+                NTP server for time synchronization.
+    endmenu
+
+    menu "Storage Configuration"
+        config SD_MOUNT_POINT
+            string "SD card mount point"
+            default "/sdcard"
+            help
+                Mount point for SD card filesystem.
+
+        config VIDEO_QUALITY
+            int "Video quality (1-10)"
+            default 8
+            range 1 10
+            help
+                JPEG quality for video frames (10 = highest quality).
+
+        config STORAGE_BUFFER_SIZE
+            int "Storage buffer size (KB)"
+            default 64
+            range 32 256
+            help
+                Buffer size for SD card write operations.
+    endmenu
+
+    menu "ESP-NOW Configuration"
+        config ESP_NOW_CHANNEL
+            int "ESP-NOW WiFi channel"
+            default 1
+            range 1 13
+            help
+                WiFi channel for ESP-NOW communication.
+
+        config ESP_NOW_ENCRYPT
+            bool "Enable ESP-NOW encryption"
+            default y
+            help
+                Use encryption for ESP-NOW packets.
+
+        config GATEWAY_MAC_ADDR
+            string "Gateway MAC Address"
+            default "00:00:00:00:00:00"
+            help
+                MAC address of the gateway device (set to 00:00:00:00:00:00 for auto-discovery).
+    endmenu
+
+    menu "Stats Engine"
+        config STATS_BUFFER_SIZE
+            int "Stats buffer entries"
+            default 1000
+            range 100 5000
+            help
+                Number of statistics entries to buffer in memory.
+
+        config STATS_FLUSH_INTERVAL
+            int "Stats flush interval (seconds)"
+            default 60
+            range 10 300
+            help
+                How often to flush stats buffer to SD card.
+
+        config ENABLE_POWER_STATS
+            bool "Enable power consumption tracking"
+            default y
+            help
+                Track and log power consumption metrics.
+
+        config ENABLE_TIMING_STATS
+            bool "Enable timing statistics"
+            default y
+            help
+                Track operation timing for performance analysis.
+    endmenu
+
+endmenu

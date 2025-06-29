@@ -1,0 +1,33 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "time_v1_main.c"
+        "stats_engine.c"
+        "wifi_manager.c"
+        "sd_manager.c"
+        "power_manager.c"
+        "camera_manager.c"
+        "audio_capture.c"
+        "esp_now_comm.c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES 
+        nvs_flash
+        esp_wifi
+        esp_netif
+        esp_event
+        esp_timer
+        fatfs
+        driver
+        esp_hw_support
+        spi_flash
+        esp_system
+        freertos
+        log
+        esp_common
+        heap
+        soc
+        sdmmc
+        vfs
+        lwip
+)

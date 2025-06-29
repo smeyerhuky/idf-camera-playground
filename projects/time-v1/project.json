@@ -1,0 +1,32 @@
+{
+  "name": "time-v1",
+  "description": "ESP32-S3 Timelapse Camera with ESP-NOW Communication",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "size", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": [
+    "ESP32-S3 XIAO Sense",
+    "OV2640 Camera",
+    "Digital Microphone",
+    "SD Card Storage",
+    "ESP-NOW Communication",
+    "Power Management",
+    "Audio/Video Capture",
+    "Stats Engine"
+  ],
+  "hardware": {
+    "board": "esp32s3-xiao-sense",
+    "camera": "ov2640",
+    "microphone": "digital_i2s",
+    "storage": "sd_card",
+    "psram": "8MB"
+  },
+  "power": {
+    "target_battery_life": "6_months",
+    "sleep_current_ua": 10,
+    "active_budget_ma": 200
+  }
+}

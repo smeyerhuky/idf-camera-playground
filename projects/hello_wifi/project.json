@@ -1,0 +1,11 @@
+{
+  "name": "hello_wifi",
+  "description": "WiFi-enabled application with stats API and SD card logging for ESP32-S3",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": ["WiFi", "HTTP Server", "SD Card", "Temperature Sensor", "System Stats", "FreeRTOS"]
+}
