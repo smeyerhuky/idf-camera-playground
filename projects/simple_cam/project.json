@@ -1,0 +1,11 @@
+{
+  "name": "simple_camera",
+  "description": "Simple camera application with SD card support for XIAO ESP32-S3 Sense",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": ["Camera OV2640", "SD Card Storage", "JPEG Capture", "Modular Architecture"]
+}

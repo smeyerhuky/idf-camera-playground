@@ -169,6 +169,16 @@ Every project must have `project.json` with:
   * PSRAM utilization
   * Power management strategies
   * GPIO and peripheral configuration
+  * SD Card storage via SPI interface
+
+- **XIAO ESP32S3 Sense SD Card Configuration** (CRITICAL - VERIFIED WORKING):
+  * MISO: GPIO 8
+  * MOSI: GPIO 9  
+  * SCLK: GPIO 7
+  * CS: GPIO 21
+  * Max Frequency: 10MHz (host.max_freq_khz = 10000)
+  * DMA Channel: SDSPI_DEFAULT_DMA
+  * Mount Point: /sdcard
 
 - **Software Development**:
   * FreeRTOS task management

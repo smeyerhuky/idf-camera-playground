@@ -1,0 +1,20 @@
+{
+  "name": "sd_card_tester",
+  "description": "Simple ESP32-S3 SD Card Initialization and Stats Tester",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "size", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": [
+    "ESP32-S3 XIAO Sense",
+    "SD Card Storage",
+    "Basic Statistics"
+  ],
+  "hardware": {
+    "board": "esp32s3-xiao-sense",
+    "storage": "sd_card",
+    "psram": "8MB"
+  }
+}

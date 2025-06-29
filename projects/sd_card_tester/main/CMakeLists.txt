@@ -1,0 +1,20 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+        "sd_tester.c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES 
+        nvs_flash
+        esp_timer
+        fatfs
+        driver
+        esp_hw_support
+        esp_system
+        freertos
+        log
+        esp_common
+        heap
+        sdmmc
+        vfs
+)

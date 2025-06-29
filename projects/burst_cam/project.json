@@ -1,0 +1,24 @@
+{
+  "name": "timelapse_camera",
+  "description": "Advanced timelapse camera with audio recording, time sync, and organized storage for XIAO ESP32-S3 Sense",
+  "target": "esp32s3",
+  "version": "2.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": [
+    "Camera OV2640",
+    "Audio Recording (PDM Microphone)",
+    "SD Card Storage",
+    "WiFi Time Synchronization",
+    "NTP Client",
+    "Organized File Structure (YYYY/MM/DD)",
+    "JSON Manifest System",
+    "3-Second Timelapse Clips",
+    "Automatic Directory Creation",
+    "WAV Audio Files",
+    "JPEG Image Capture",
+    "Modular Architecture"
+  ]
+}

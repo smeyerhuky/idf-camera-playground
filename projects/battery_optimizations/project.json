@@ -1,0 +1,40 @@
+{
+  "name": "battery_optimizations",
+  "description": "Thermal-optimized camera + WiFi application with adaptive capture rates, power management, and temperature monitoring for ESP32-S3",
+  "target": "esp32s3",
+  "version": "2.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": [
+    "Camera OV2640",
+    "Thermal-Aware Capture",
+    "WiFi",
+    "HTTP Server",
+    "SD Card Storage",
+    "JPEG Capture",
+    "Temperature Monitoring",
+    "System Stats",
+    "FreeRTOS",
+    "Power Management",
+    "Adaptive Performance"
+  ],
+  "optimizations": {
+    "based_on": "hello_wifi + simple_cam",
+    "thermal_improvements": [
+      "Power Management (80MHz CPU)",
+      "WiFi Power Reduction (11dBm)",
+      "Thermal-Adaptive Capture Intervals",
+      "Temperature-Tagged Photos",
+      "Efficient SD Card Operations",
+      "Singleton Temperature Sensor"
+    ],
+    "camera_features": [
+      "10-30s adaptive capture rate",
+      "Temperature threshold monitoring",
+      "JPEG quality optimization",
+      "Thermal throttling at 50°C"
+    ]
+  }
+}
