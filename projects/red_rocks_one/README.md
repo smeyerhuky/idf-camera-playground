@@ -34,10 +34,10 @@ Edit `main/wifi_config.h` with your network credentials:
 
 ```bash
 # From project root
-./build.sh build simple_timelapse setup
-./build.sh build simple_timelapse build
-./build.sh build simple_timelapse flash
-./build.sh build simple_timelapse monitor
+./build.sh build red_rocks_one setup
+./build.sh build red_rocks_one build
+./build.sh build red_rocks_one flash
+./build.sh build red_rocks_one monitor
 ```
 
 ## File Organization
