@@ -1,0 +1,25 @@
+{
+  "name": "musical-dna-sequencer",
+  "description": "Real-time FFT analysis and musical pattern recognition with visualization",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "size", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": [
+    "FFT audio analysis",
+    "Beat detection",
+    "Chord recognition",
+    "Genre classification",
+    "TensorFlow Lite Micro",
+    "LED visualization",
+    "TFT display"
+  ],
+  "hardware": {
+    "microphone": "INMP441 I2S / MAX4466 analog",
+    "display": "ILI9488 3.5\" TFT",
+    "leds": "WS2812B strips",
+    "storage": "SD card for patterns"
+  }
+}

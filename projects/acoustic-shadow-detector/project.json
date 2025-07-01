@@ -1,0 +1,22 @@
+{
+  "name": "acoustic-shadow-detector",
+  "description": "Real-time acoustic shadow detection system with distributed MEMS microphones",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "size", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": [
+    "I2S audio capture",
+    "SPL measurement",
+    "ESP-NOW mesh networking",
+    "Multi-node triangulation",
+    "OLED/TFT visualization"
+  ],
+  "hardware": {
+    "microphone": "INMP441 I2S MEMS",
+    "display": "SSD1306 OLED / ILI9488 TFT",
+    "power": "18650 Li-Ion with TP4056"
+  }
+}

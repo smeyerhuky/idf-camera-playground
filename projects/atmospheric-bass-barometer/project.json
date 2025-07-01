@@ -1,0 +1,26 @@
+{
+  "name": "atmospheric-bass-barometer",
+  "description": "Environmental correlation engine for bass frequency perception with barometric sensors",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "size", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": [
+    "Barometric pressure sensing",
+    "Environmental monitoring",
+    "Bass frequency analysis",
+    "Sensor fusion algorithms",
+    "GPS altitude verification",
+    "Real-time compensation",
+    "Venue profiling"
+  ],
+  "hardware": {
+    "barometer": "BMP390 + MS5611",
+    "environmental": "DHT22 temp/humidity",
+    "gps": "L86 GNSS module",
+    "microphone": "INMP441 I2S (bass analysis)",
+    "communication": "OSC/MIDI control output"
+  }
+}

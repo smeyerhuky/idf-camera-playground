@@ -1,0 +1,13 @@
+idf_component_register(
+    SRCS 
+        "audio_processing.c"
+        "fft_utils.c"
+        "filter_bank.c"
+    INCLUDE_DIRS 
+        "include"
+    REQUIRES 
+        esp-dsp
+        driver
+    PRIV_REQUIRES
+        esp_timer
+)
