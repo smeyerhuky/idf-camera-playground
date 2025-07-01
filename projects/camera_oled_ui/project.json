@@ -1,0 +1,14 @@
+{
+  "name": "camera_oled_ui",
+  "description": "Camera control interface with OLED display using LVGL",
+  "target": "esp32s3",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "menuconfig"]
+  },
+  "features": [
+    "camera_control",
+    "oled_display", 
+    "lvgl_ui",
+    "i2c_interface"
+  ]
+}

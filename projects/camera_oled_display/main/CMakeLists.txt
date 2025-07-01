@@ -1,0 +1,12 @@
+idf_component_register(
+    SRCS 
+        "main.c"
+    INCLUDE_DIRS 
+        "."
+    REQUIRES 
+        nvs_flash
+        esp32-camera
+        ssd1306_driver
+        lvgl_port
+        camera_preview
+)

@@ -1,0 +1,16 @@
+{
+  "name": "camera_oled_display",
+  "description": "Camera preview on OLED display with LVGL graphics",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all", "menuconfig"],
+    "default_command": "build"
+  },
+  "features": {
+    "camera": true,
+    "i2c": true,
+    "display": "SSD1306 OLED 128x64",
+    "lvgl": true
+  }
+}
