@@ -1,0 +1,30 @@
+{
+  "name": "red_rocks_one",
+  "description": "Red Rocks QR Photo Booth - Wide-angle photo capture with instant QR code sharing for concert-goers",
+  "target": "esp32s3",
+  "version": "1.0.0",
+  "build": {
+    "commands": ["setup", "build", "flash", "monitor", "all"],
+    "default_command": "build"
+  },
+  "features": [
+    "OV2640 160° Wide-Angle Camera",
+    "Waveshare 1.69\" Touch LCD Display",
+    "QR Code Generation",
+    "Instant Photo Download",
+    "WiFi Hotspot Photo Sharing",
+    "18650 Battery Power Management",
+    "Red Rocks Concert Optimized",
+    "Touch Interface Control",
+    "HTTP Photo Server",
+    "Modular Architecture"
+  ],
+  "hardware": {
+    "board": "waveshare_esp32s3_lcd_1.69",
+    "camera": "ov2640_wide_angle_160deg",
+    "display": "st7789_240x280_touch",
+    "battery": "18650_4s_pack",
+    "storage": "internal_flash"
+  },
+  "target_use_case": "red_rocks_amphitheater_photo_booth"
+}
